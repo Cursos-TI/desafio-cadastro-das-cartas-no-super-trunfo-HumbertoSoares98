@@ -117,6 +117,7 @@ int main (){
     //EXIBIÇÃO DAS INFORMAÇÕES DA PRIMEIRA CARTA !!!
 
     printf("\n==========EXIBIÇÃO DOS DADOS DA PRIMEIRA CARTA==========\n");
+    printf("Carta 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Código da cidade: %s\n", carta1);
     printf("Nome da cidade: %s\n", cidade1);
@@ -131,6 +132,7 @@ int main (){
     //EXIBIÇÃO DAS INFORMAÇÕES DA SEGUNDA CARTA !!!
 
     printf("\n==========EXIBIÇÃO DOS DADOS DA SEGUNDA CARTA==========\n");
+    printf("Carta 2:\n");
     printf("Estado: %c\n", estado2);
     printf("Código da cidade: %s\n", carta2);
     printf("Nome da cidade: %s\n", cidade2);
