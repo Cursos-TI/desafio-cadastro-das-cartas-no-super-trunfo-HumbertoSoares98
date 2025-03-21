@@ -10,13 +10,29 @@ int main (){
     // O NOME DA CIDADE: IMPRIME O NOME DA CIDADE, TIPO: CHAR [] STRING ...
     char cidade1 [50], cidade2 [50];
     
-    // O NÚMERO DE HABITANTES DA CIDADE, TIPO: INT (IMPRIME UM INTEIRO NO FORMATO DECIMAL) ...
-    // A QUANTIDADE DE PONTOS TURÍSTICOS NA CIDADE, TIPO: INT (IMPRIME UM INTEIRO NO FORMATO DECIMAL) ...
-    int populacao1, populacao2, pontostu1, pontostu2;
-    
+    // O NÚMERO DE HABITANTES DA CIDADE, TIPO: unsigned long int ...  
+    unsigned long int populacao1, populacao2;
+
     // ÁREA DA CIDADE EM QUILOMETROS QUADRADOS, TIPO: FLOAT (IMPRIME UM NÚMERO DE PONTO FLUTUANTE PADRÃO) ...
+    float areakm1, areakm2;
+
     // PIB: PRODUTO INTERNO BRUTO DA CIDADE, TIPO: FLOAT (IMPRIME UM NÚMERO DE PONTO FLUTUANTE PADRÃO) ...
-    float areakm1, areakm2, pib1, pib2, densidade1, densidade2, percapita1, percapita2;
+    float pib1, pib2;
+
+    // A QUANTIDADE DE PONTOS TURÍSTICOS NA CIDADE, TIPO: INT (IMPRIME UM INTEIRO NO FORMATO DECIMAL) ...
+    int pontostu1, pontostu2;
+    
+    // DENSIDADE POPULACIONAL, TIPO: FLOAT (IMPRIME UM NÚMERO DE PONTO FLUTUANTE PADRÃO) ...
+    float densidade1, densidade2;
+
+    // PIB PER CAPITA, TIPO: FLOAT (IMPRIME UM NÚMERO DE PONTO FLUTUANTE PADRÃO) ...
+    float percapita1, percapita2;
+    
+    // DECLARAÇÃO DAS VARIÁVEIS RESULTADOS PARA A COMPARAÇÃO SIMPLES ...
+    int resultadoPopulacao, resultadoArea, resultadoPib, resultadoPontosTuristicos, resultadoDensidade, resultadoPibPerCapita, resultadoSuperPoder;
+
+    // DECLARAÇÃO DA VARIÁVEL SUPER PODER ...
+    float SuperPoder1, SuperPoder2;
 
     //ENTRADA DE DADOS DA PRIMEIRA CARTA !!!
 
@@ -36,7 +52,7 @@ int main (){
 
     printf("Digite o número da população: ");
     // %d IMPRIME UM INTEIRO NO FORMATO DECIMAL ...
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
 
     printf("Digite a área da cidade (em km²): ");
     // %f IMPRIME UM NÚMERO DE PONTO FLUTUANTE NO FORMATO PADRÃO ...
@@ -77,7 +93,7 @@ int main (){
 
     printf("Digite o número da população: ");
     // %d IMPRIME UM INTEIRO NO FORMATO DECIMAL ...
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área da cidade (em km²): ");
     // %f IMPRIME UM NÚMERO DE PONTO FLUTUANTE NO FORMATO PADRÃO ...
@@ -104,7 +120,7 @@ int main (){
     printf("Estado: %c\n", estado1);
     printf("Código da cidade: %s\n", carta1);
     printf("Nome da cidade: %s\n", cidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %lu\n", populacao1);
     printf("Área: %.2f km²\n", areakm1);                // SAÍDA DE DADOS FLOAT EM 2 CASAS DECIMAIS (%.2f) ...
     printf("PIB:R$ %.2f Bilhões de reais\n", pib1);     // SAÍDA DE DADOS FLOAT EM 2 CASAS DECIMAIS (%.2f) ...
     printf("Pontos Turísticos: %d\n", pontostu1);
@@ -118,12 +134,37 @@ int main (){
     printf("Estado: %c\n", estado2);
     printf("Código da cidade: %s\n", carta2);
     printf("Nome da cidade: %s\n", cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Área: %.2f km²\n", areakm2);                // SAÍDA DE DADOS FLOAT EM 2 CASAS DECIMAIS (%.2f) ...
     printf("PIB: R$ %.2f Bilhões de reais\n", pib2);     // SAÍDA DE DADOS FLOAT EM 2 CASAS DECIMAIS (%.2f) ...
     printf("Pontos Turísticos: %d\n", pontostu2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: %.2f reais\n", percapita2);
+    printf("\n=========================================================\n");
+
+    // SOMANDO TODOS OS ATRIBUTOS NÚMERICOS ...
+    SuperPoder1 = populacao1 + areakm1 + pib1 + pontostu1 + percapita1 + (1 / densidade1);
+    SuperPoder2 = populacao2 + areakm2 + pib2 + pontostu2 + percapita2 + (1 / densidade2);
+
+    // COMPARAÇÃO SIMPLES ...
+    resultadoPopulacao = populacao1 > populacao2;
+    resultadoArea = areakm1 > areakm2;
+    resultadoPib = pib1 > pib2;
+    resultadoPontosTuristicos = pontostu1 > pontostu2;
+    resultadoDensidade = densidade1 < densidade2;
+    resultadoPibPerCapita = percapita1 > percapita2;
+    resultadoSuperPoder = SuperPoder1 > SuperPoder2;
+
+    // EXIBIÇÃO DA COMPARAÇÃO SIMPLES ENTRE AS DUAS CARTAS ...
+
+    printf("\n=============COMPARAÇÃO SIMPLES DAS CARTAS=============\n");
+    printf("População: carta (%d) venceu\n", resultadoPopulacao);
+    printf("Área: carta (%d) venceu\n", resultadoArea);
+    printf("PIB: carta (%d) venceu\n", resultadoPib);
+    printf("Pontos Turisticos: carta (%d) venceu\n", resultadoPontosTuristicos);
+    printf("Densidade Populacional: carta (%d) venceu\n", resultadoDensidade);
+    printf("PIB per Capita: carta (%d) venceu\n", resultadoPibPerCapita);
+    printf("Super Poder: carta (%d) venceu\n", resultadoSuperPoder);
     printf("\n=========================================================\n");
 
     return 0;
